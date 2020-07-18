@@ -1,0 +1,144 @@
+{% extends "base.html" %} {% load static %}
+<!--  -->
+{% block content %}
+<div id="home-page">
+  <div class="dropdown row" id="mydropdown">
+    <div class="btn-group col-xs-12 col-sm-4">
+      <button
+        class="btn btn-light dropdown-toggle"
+        type="button"
+        id="b_state"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Select State
+      </button>
+      <div class="dropdown-menu" id="s_state" aria-labelledby="b_state">
+          {% for state in states %}
+          <a
+            class="dropdown-item dropdown-state"
+            id="state-{{state.id}}"
+            data-state-id="{{state.id}}"
+            url="{% url 'hospital:h_list' %}"
+            district-url="{% url 'hospital:filter_district' %}"
+            >{{state}}</a
+          >
+          {% endfor %}
+        </div>
+      </div>
+      <div class="btn-group col-xs-12 col-sm-4">
+        <button
+          class="btn btn-light dropdown-toggle"
+          type="button"
+          id="b_district"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Select District
+        </button>
+        <div class="dropdown-menu" id="s_district">
+          {% block filter_district %}
+          <div id="filter_district"></div>
+          {% endblock %}
+        </div>
+      </div>
+      <div class="btn-group col-xs-12 col-sm-4">
+        <button
+          class="btn btn-light dropdown-toggle"
+          type="button"
+          id="b_taluka"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Select Taluka
+        </button>
+        <div class="dropdown-menu" id="s_taluka">
+          {% block filter_taluka %}
+          <div id="filter_taluka"></div>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+  <!--  -->
+  {% block hospital_table %}
+  <div id="hospital_table">
+    <table class="table table-hover table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">SN</th>
+          <th scope="col">Name</th>
+          <th scope="col">Bed Available</th>
+          <th scope="col">Updated On</th>
+          <th scope="col">Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for hospital in page_obj %}
+        <tr>
+          <th scope="row">
+            {{forloop.counter|add:page_obj.start_index|add:-1}}
+          </th>
+          <td>
+            <a href="{%url 'hospital:h_detail' pk=hospital.pk %}">
+              {{hospital.name}}
+            </a>
+          </td>
+          <td>
+            <div class="beds-parent" id="hospital-{{hospital.id}}">
+              <div class="beds-child1">
+                <span>
+                  {% if hospital.availability.bed_availabe == 0 %}
+                  <p>NA</p>
+                  {% elif hospital.availability.bed_availabe == "" %}
+                  <p>NA</p>
+                  {% else %} {{hospital.availability.bed_availabe}} {% endif %}
+                </span>
+              </div>
+              <div class="beds-child2">
+                <button
+                  type="button"
+                  id="{{hospital.id}}"
+                  class="btn btn-light editbtn"
+                  edit-url="{% url 'hospital:h_edit' hospital.id%}"
+                >
+                  <i class="far fa-edit editicon"></i>
+                </button>
+              </div>
+            </div>
+          </td>
+          <td>
+            {% if hospital.availability.last_updated != "" %}
+            {{hospital.availability.last_updated}} {% else %}
+            <p>NA</p>
+            {% endif %}
+          </td>
+
+          <td>{{hospital.address}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="pagination">
+      <span class="step-links">
+        {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+        <span class="current">
+          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

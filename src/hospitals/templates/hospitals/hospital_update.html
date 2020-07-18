@@ -1,0 +1,25 @@
+<form method="post" action="{% url 'hospital:h_edit' hospital_id %}">
+  {% csrf_token %} {{ form }}
+  <button type="submit" value="Update" class="btn btn-light">
+    <i class="far fa-check-square"></i>
+  </button>
+</form>
+
+<!-- 
+  This does not works
+<button
+  type="button"
+  data-id="{{hospital_id}}"
+  class="btn btn-success"
+  id="updatebtn"
+>
+  <i class="fas fa-check"></i>
+</button> 
+
+option 2
+  we will need these attributes later for 
+  verifying data on basis of location
+  id=updatebtn 
+  data-id="{{hospital_id}}"
+
+-->

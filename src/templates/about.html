@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% load static %}
+<!--  -->
+{% block content %}
+<section>
+  <div class="container">
+    <div id="about">
+      <h4>About</h4>
+      <dl>
+        <dt>What is Covid Hospital Tracker?</dt>
+        <dd>
+          Covid Hospital Tracker is a crowdsourced initiative to track covid
+          hospitals in India
+        </dd>
+        <dt>From where the data is taken?</dt>
+        <dd>
+          The data is taken from
+          <a
+            href="https://data.gov.in/resources/nin-health-faclities-geo-code-and-additional-parameters-updated-till-last-month"
+            target="_blank"
+            >data.gov.in</a
+          >
+        </dd>
+        <dt>How do you validate information provided?</dt>
+        <dd>
+          Currently there are no validations. Any user can update the total
+          number of available beds present in a hospital.
+        </dd>
+      </dl>
+    </div>
+    <div id="credits">
+      <h4>Credits</h4>
+      <div>
+        Icons made by
+        <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon">flaticon</a>
+      </div>
+    </div>
+
+    <div id="madeby">
+      <h4>Designed and Developed By</h4>
+      <div>
+        <i class="far fa-envelope fa-fw"></i>
+        <a href="mailto:sutharlalit.97@gmail.com">Lalit Suthar</a>
+        <div id="icons" style="width: 100px; margin-top: 10px;">
+          <a
+            href="https://twitter.com/lalit_97"
+            target="_blank"
+            style="float: left;"
+          >
+            <i class="fab fa-twitter fa-fw fa-2x"></i>
+          </a>
+          <a
+            href="https://github.com/lalit97/covid-hospital-tracker"
+            target="_blank"
+            style="float: right;"
+            ><i class="fab fa-github fa-fw fa-2x"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,99 @@
+/* html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: [footer-height];
+} */
+
+th,
+td {
+  width: 30px;
+  height: 60px;
+}
+
+/* Bed Available Column  */
+.beds-parent {
+  margin: auto;
+}
+
+.beds-child1 {
+  float: left;
+}
+
+.beds-child2 {
+  float: right;
+}
+
+/*drop down*/
+#mydropdown {
+  padding: 10px !important;
+}
+.dropdown-menu {
+  max-height: 300px;
+  overflow-x: hidden;
+  color: red;
+  width: 300px !important;
+  /* margin: 100px auto !important; */
+}
+.dropdown-menu a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  text-decoration: none !important;
+  padding-left: 0 !important;
+  padding: 15px !important;
+  display: block !important;
+  transition: all 0.3s ease-in-out !important;
+  -moz-transition: all 0.3s ease-in-out !important;
+  -webkit-transition: all 0.3s ease-in-out !important;
+}
+.dropdown-menu a:hover {
+  background: #e3f2fd;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+/*profile operator*/
+
+#profile ul,
+li {
+  text-decoration: none !important;
+}
+
+#profile {
+  margin-top: 10px !important;
+  margin: auto !important;
+  padding: 50px !important;
+}
+
+/* Navigatio bar*/
+
+nav {
+  border-bottom: blue !important;
+}
+
+/*about div*/
+#madeby,
+#credits,
+#about {
+  margin: 30px !important;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 5px;
+  background-color: red;
+  text-align: center;
+  color: #ffffff;
+}
+
+#madeby {
+  margin-bottom: 233px !important;
+}
+
+#home-page {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
