@@ -7,7 +7,6 @@
 .DS_Store
 pyvenv.cfg
 keys.yaml
-*.csv
 ### Django ###
 *.log
 *.pot
