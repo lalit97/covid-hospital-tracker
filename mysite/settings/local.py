@@ -1,5 +1,5 @@
 import os
-from .settings.base import *
+from .base import *
 
 DEBUG = True
 ALLOWED_HOSTS = []
