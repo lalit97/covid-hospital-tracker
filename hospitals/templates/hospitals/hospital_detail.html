@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% load static %}
+<!--  -->
+{% block style %}
+<style>
+  tr td {
+    background-color: #343a40;
+    color: #fff;
+  }
+  tr td + td {
+    background-color: #fff;
+    color: #000;
+  }
+</style>
+{% endblock %}
+
+<!--  -->
+{% block content %}
+<table class="table table-hover table-bordered text-center">
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>{{object.name}}</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>{{object.address}}</td>
+    </tr>
+    <tr>
+      <td>Street</td>
+      <td>{{object.street}}</td>
+    </tr>
+    <tr>
+      <td>Landmark</td>
+      <td>{{object.landmark}}</td>
+    </tr>
+    <tr>
+      <td>Locality</td>
+      <td>{{object.locality}}</td>
+    </tr>
+    <tr>
+      <td>PinCode</td>
+      <td>{{object.pinCode}}</td>
+    </tr>
+    <tr>
+      <td>Contact</td>
+      <td>{{object.landline}}</td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>{{object.facility_type}}</td>
+    </tr>
+    <tr>
+      <td>State</td>
+      <td>{{object.state}}</td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td>{{object.district}}</td>
+    </tr>
+    <tr>
+      <td>Taluka</td>
+      <td>{{object.taluka}}</td>
+    </tr>
+    <tr>
+      <td>Block</td>
+      <td>{{object.block}}</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

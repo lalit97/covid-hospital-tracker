@@ -1,0 +1,85 @@
+<table class="table table-hover table-bordered">
+  <thead style="background-color: #e3f2fd;">
+    <tr>
+      <th scope="col">SN</th>
+      <th scope="col">Name</th>
+      <th scope="col">Bed Available</th>
+      <th scope="col">Updated On</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for hospital in page_obj %}
+    <tr>
+      <th scope="row">{{forloop.counter|add:page_obj.start_index|add:-1}}</th>
+      <td>
+        <a href="{%url 'hospital:h_detail' pk=hospital.pk %}">
+          {{hospital.name}}
+        </a>
+      </td>
+      <td>
+        <div class="beds-parent" id="hospital-{{hospital.id}}">
+          <div class="beds-child1">
+            <span>
+              {% if hospital.availability.bed_availabe == 0 %}
+              <p>NA</p>
+              {% elif hospital.availability.bed_availabe == "" %}
+              <p>NA</p>
+              {% else %} {{hospital.availability.bed_availabe}} {% endif %}
+            </span>
+          </div>
+          <div class="beds-child2">
+            <button
+              type="button"
+              id="{{hospital.id}}"
+              class="btn btn-light editbtn"
+              edit-url="{% url 'hospital:h_edit' hospital.id%}"
+            >
+              <i class="far fa-edit editicon"></i>
+            </button>
+          </div>
+        </div>
+      </td>
+      <td>
+        {% if hospital.availability.last_updated != "" %}
+        {{hospital.availability.last_updated}} {% else %}
+        <p>NA</p>
+        {% endif %}
+      </td>
+
+      <td>{{hospital.address}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div>
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      {% if page_obj.has_previous %}
+      <a
+        class="page-link"
+        id="list_prev"
+        page="{{ page_obj.previous_page_number }}"
+        style="color: blue;"
+        >previous</a
+      >
+      {% endif %}
+    </li>
+    <li class="page-item">
+      <a class="page-link">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+      </a>
+    </li>
+    <li class="page-item">
+      {% if page_obj.has_next %}
+      <a
+        class="page-link"
+        id="list_next"
+        style="color: blue;"
+        page="{{ page_obj.next_page_number }}"
+        >next</a
+      >
+      {% endif %}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,126 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+}
+
+#home-page {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+th,
+td {
+  text-align: center;
+  min-width: 100px;
+}
+
+th {
+  font-weight: normal;
+  height: 55px;
+}
+
+/* Bed Available Column  */
+.beds-parent {
+  margin: auto;
+}
+.beds-child1 {
+  float: left;
+}
+.beds-child2 {
+  float: right;
+}
+
+/*drop down*/
+
+.btn-group {
+  margin-bottom: 5px;
+}
+
+#mydropdown {
+  padding: 10px !important;
+}
+.dropdown-menu {
+  max-height: 327px;
+  overflow-x: hidden;
+  width: 442px !important;
+  text-align: center;
+  /*margin: 100px auto !important;*/
+}
+.dropdown-menu a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  text-decoration: none !important;
+  padding-left: 0 !important;
+  padding: 15px !important;
+  display: block !important;
+  transition: all 0.3s ease-in-out !important;
+  -moz-transition: all 0.3s ease-in-out !important;
+  -webkit-transition: all 0.3s ease-in-out !important;
+}
+.dropdown-menu a:hover {
+  background: #e3f2fd;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+/*profile operator*/
+
+#profile ul,
+#profile li {
+  text-decoration: none !important;
+}
+#profile {
+  margin-top: 10px !important;
+  margin: auto !important;
+  padding: 50px !important;
+}
+
+/* Navigatio bar*/
+header {
+  border-bottom: red 2px solid;
+}
+
+/*about div*/
+#madeby,
+#credits,
+#about {
+  margin: 30px !important;
+}
+
+#madeby {
+  margin-bottom: 190px !important;
+}
+
+footer {
+  padding: 5px;
+  background-color: red;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #about,
+  #madeby,
+  #icons,
+  #credits {
+    float: none;
+    text-align: center;
+  }
+  .dropdown-menu {
+    max-height: 327px;
+    overflow-x: hidden;
+    width: 320px !important;
+    text-align: center;
+  }
+  #madeby {
+    margin-bottom: 140px !important;
+  }
+}

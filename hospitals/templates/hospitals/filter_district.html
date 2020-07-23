@@ -1,0 +1,15 @@
+{% load static %}
+<!--  -->
+{% for district in districts %}
+
+<a
+  class="dropdown-item dropdown-district"
+  id="district-{{district.id}}"
+  data-district-id="{{district.id}}"
+  url="{% url 'hospital:h_list' %}"
+  taluka-url="{% url 'hospital:filter_taluka' %}"
+  >{{district}}</a
+>
+{% endfor %}
+
+<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
