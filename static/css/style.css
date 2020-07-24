@@ -47,11 +47,10 @@ th {
   padding: 10px !important;
 }
 .dropdown-menu {
-  max-height: 327px;
+  max-height: 300px !important;
   overflow-x: hidden;
   width: 442px !important;
   text-align: center;
-  /*margin: 100px auto !important;*/
 }
 .dropdown-menu a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
@@ -115,7 +114,7 @@ footer {
     text-align: center;
   }
   .dropdown-menu {
-    max-height: 327px;
+    max-height: 300px;
     overflow-x: hidden;
     width: 320px !important;
     text-align: center;

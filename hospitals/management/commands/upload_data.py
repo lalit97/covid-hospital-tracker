@@ -1,6 +1,7 @@
 import os
 import csv
 from django.conf import settings
+from tqdm import tqdm
 from hospitals.models import Hospital
 from django.core.management.base import BaseCommand, CommandError
 
@@ -13,6 +14,7 @@ class Command(BaseCommand):
         path = os.path.join(settings.PROJECT_PATH, filename)
         file = open(path, "r")
         reader = csv.DictReader(file)
+        hospitals = []
         for dict_ in reader:
             name = dict_["Health Facility Name"]
             address = dict_["Address"]
@@ -46,7 +48,7 @@ class Command(BaseCommand):
             taluka = dict_["Taluka_Name"]
             block = dict_["Block_Name"]
             try:
-                Hospital.objects.get_or_create(
+                hospital = Hospital(
                     name=name,
                     address=address,
                     street=street,
@@ -63,5 +65,15 @@ class Command(BaseCommand):
                     taluka=taluka,
                     block=block,
                 )
+                hospitals.append(hospital)
             except Exception as e:
                 print(e)
+        all_chunks = chunks(hospitals, 10000)
+        for chunk in tqdm(all_chunks):
+            Hospital.objects.bulk_create(chunk)
+
+
+def chunks(lst, n):
+    """Yield successive n-sized chunks from lst."""
+    for i in range(0, len(lst), n):
+        yield lst[i : i + n]
