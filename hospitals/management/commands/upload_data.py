@@ -10,41 +10,41 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         filename = "data.csv"
-        path = os.path.join(settings.BASE_DIR, filename)
-        file = open(path, 'r')
+        path = os.path.join(settings.PROJECT_PATH, filename)
+        file = open(path, "r")
         reader = csv.DictReader(file)
         for dict_ in reader:
-            name = dict_['Health Facility Name']
-            address = dict_['Address']
-            street = dict_['street']
-            landmark = dict_['landmark']
-            locality = dict_['locality']
-            pincode = dict_['pincode']
+            name = dict_["Health Facility Name"]
+            address = dict_["Address"]
+            street = dict_["street"]
+            landmark = dict_["landmark"]
+            locality = dict_["locality"]
+            pincode = dict_["pincode"]
             try:
                 int(pincode)
             except:
                 pincode = None
-            landline = dict_['landline_number']
-            latitude = dict_['latitude']
+            landline = dict_["landline_number"]
+            latitude = dict_["latitude"]
             try:
                 float(latitude)
             except:
                 latitude = None
-            longitude = dict_['longitude']
+            longitude = dict_["longitude"]
             try:
                 float(longitude)
             except:
                 longitude = None
-            altitude = dict_['altitude']
+            altitude = dict_["altitude"]
             try:
                 float(altitude)
             except:
                 altitude = None
-            facility_type = dict_['Facility Type']
-            state = dict_['State_Name']
-            district = dict_['District_Name']
-            taluka = dict_['Taluka_Name']
-            block = dict_['Block_Name']
+            facility_type = dict_["Facility Type"]
+            state = dict_["State_Name"]
+            district = dict_["District_Name"]
+            taluka = dict_["Taluka_Name"]
+            block = dict_["Block_Name"]
             try:
                 Hospital.objects.get_or_create(
                     name=name,
@@ -61,7 +61,7 @@ class Command(BaseCommand):
                     state=state,
                     district=district,
                     taluka=taluka,
-                    block=block
+                    block=block,
                 )
             except Exception as e:
                 print(e)
