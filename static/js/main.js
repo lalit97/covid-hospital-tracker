@@ -1,41 +1,40 @@
 $(document).ready(function () {
-  $(function () {
-    /*refresh detection algorithm*/
-    checkRefresh();
-    /* end of algorithm */
+  /*refresh detection algorithm*/
+  checkRefresh();
+  /* end of algorithm */
 
-    /*drop down animation start */
-    $("#b_state").on("click", function () {
-      $("#s_state").slideDown(500);
-    });
-
-    $("#s_state").on("click", function () {
-      $("#s_state").slideUp(0);
-    });
-
-    $("#b_district").on("click", function () {
-      $("#s_district").slideDown(500);
-    });
-
-    $("#s_district").on("click", function () {
-      $("#s_district").slideUp(0);
-    });
-    $("#b_taluka").on("click", function () {
-      $("#s_taluka").slideDown(500);
-    });
-
-    $("#s_taluka").on("click", function () {
-      $("#s_taluka").slideUp(0);
-    });
-    /*drop down animation end */
-
-    /*To active Navigation links*/
-    $("nav li a")
-      .filter(function () {
-        return this.href === location.href;
-      })
-      .addClass("active");
+  /*drop down animation start */
+  $("#b_state").on("click", function () {
+    $("#s_state").slideToggle(500);
   });
+
+  $("#s_state").on("click", function () {
+    $("#s_state").slideToggle(0);
+  });
+
+  $("#b_district").on("click", function () {
+    $("#s_district").slideToggle(500);
+  });
+
+  $("#s_district").on("click", function () {
+    $("#s_district").slideToggle(0);
+  });
+  $("#b_taluka").on("click", function () {
+    $("#s_taluka").slideToggle(500);
+  });
+
+  $("#s_taluka").on("click", function () {
+    $("#s_taluka").slideToggle(0);
+  });
+  /*drop down animation end */
+
+  /*To active Navigation links*/
+  $("nav li a")
+    .filter(function () {
+      return this.href === location.href;
+    })
+    .addClass("active");
+
   /*end Navigation links*/
 
   $(document).on("click", ".dropdown-state", function () {
@@ -159,7 +158,7 @@ function filterDistricts(data, url) {
     url: url,
     data: data,
     success: function (result) {
-      $("#filter_district").html(result);
+      $("#s_district").html(result);
     },
   });
 }
@@ -170,7 +169,7 @@ function filterTalukas(data, url) {
     url: url,
     data: data,
     success: function (result) {
-      $("#filter_taluka").html(result);
+      $("#s_taluka").html(result);
     },
   });
 }

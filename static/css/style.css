@@ -15,6 +15,12 @@ body {
   padding-left: 15px;
 }
 
+/* Navigatio bar*/
+header {
+  border-bottom: red 2px solid;
+}
+
+/*table */
 th,
 td {
   text-align: center;
@@ -36,9 +42,9 @@ th {
 .beds-child2 {
   float: right;
 }
+/* end Bed Available Column  */
 
 /*drop down*/
-
 .btn-group {
   margin-bottom: 5px;
 }
@@ -68,25 +74,9 @@ th {
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
 }
+/* end drop down*/
 
-/*profile operator*/
-
-#profile ul,
-#profile li {
-  text-decoration: none !important;
-}
-#profile {
-  margin-top: 10px !important;
-  margin: auto !important;
-  padding: 50px !important;
-}
-
-/* Navigatio bar*/
-header {
-  border-bottom: red 2px solid;
-}
-
-/*about div*/
+/*about page*/
 #madeby,
 #credits,
 #about {
@@ -97,6 +87,17 @@ header {
   margin-bottom: 190px !important;
 }
 
+#profile ul,
+#profile li {
+  text-decoration: none !important;
+}
+#profile {
+  margin-top: 10px !important;
+  margin: auto !important;
+  padding: 50px !important;
+}
+/*end about page*/
+
 footer {
   padding: 5px;
   background-color: red;
@@ -106,10 +107,8 @@ footer {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  #about,
-  #madeby,
   #icons,
-  #credits {
+  #madeby {
     float: none;
     text-align: center;
   }
@@ -121,5 +120,9 @@ footer {
   }
   #madeby {
     margin-bottom: 140px !important;
+  }
+  #about,
+  #credits {
+    width: 80%;
   }
 }

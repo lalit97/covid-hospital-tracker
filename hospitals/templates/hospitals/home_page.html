@@ -38,11 +38,13 @@
       >
         Select District
       </button>
-      <div class="dropdown-menu" id="s_district" aria-labelledby="b_district">
-        {% block filter_district %}
-        <div id="filter_district"></div>
-        {% endblock %}
-      </div>
+      {% block filter_district %}
+      <div
+        class="dropdown-menu"
+        id="s_district"
+        aria-labelledby="b_district"
+      ></div>
+      {% endblock %}
     </div>
     <div class="btn-group col-xs-12 col-sm-4">
       <button
@@ -55,11 +57,9 @@
       >
         Select Taluka
       </button>
-      <div class="dropdown-menu" id="s_taluka" aria-labelledby="b_taluka">
-        {% block filter_taluka %}
-        <div id="filter_taluka"></div>
-        {% endblock %}
-      </div>
+      {% block filter_taluka %}
+      <div class="dropdown-menu" id="s_taluka" aria-labelledby="b_taluka"></div>
+      {% endblock %}
     </div>
   </div>
 </div>
