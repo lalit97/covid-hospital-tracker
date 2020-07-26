@@ -54,6 +54,14 @@ $(document).ready(function () {
 
     /* setting session variable for pagination*/
     sessionStorage.setItem("state_id", state_id);
+
+    /* clear filter and make sure pagination working correctly*/
+    if (sessionStorage.length == 2 || sessionStorage.length === 3) {
+      sessionStorage.clear();
+      sessionStorage.setItem("state_id", state_id);
+      $("#b_district").text("Select District");
+      $("#b_taluka").text("Select Taluka");
+    }
   });
 
   $(document).on("click", ".dropdown-district", function () {
@@ -73,6 +81,13 @@ $(document).ready(function () {
 
     /* setting session variable for pagination*/
     sessionStorage.setItem("district_id", district_id);
+
+    /* clear filter and make sure pagination working correctly*/
+    if (sessionStorage.length === 3) {
+      sessionStorage.clear();
+      sessionStorage.setItem("district_id", district_id);
+      $("#b_taluka").text("Select Taluka");
+    }
   });
 
   $(document).on("click", ".dropdown-taluka", function () {
@@ -104,7 +119,6 @@ $(document).ready(function () {
   });
 
   $(document).on("click", "#list_next", function () {
-    console.log("next clicked");
     obj = $(this);
     data = {
       page: obj.attr("page"),

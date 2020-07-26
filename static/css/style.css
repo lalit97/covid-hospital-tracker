@@ -125,4 +125,14 @@ footer {
   #credits {
     width: 80%;
   }
+  .beds-parent {
+    margin: auto;
+    text-align: center;
+  }
+  .beds-child1 {
+    float: none;
+  }
+  .beds-child2 {
+    float: none;
+  }
 }

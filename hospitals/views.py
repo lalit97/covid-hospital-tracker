@@ -95,7 +95,7 @@ class HospitalUpdateView(SuccessMessageMixin, UpdateView):
     template_name = "hospitals/hospital_update.html"
     form_class = AvailabilityModelForm
     success_url = reverse_lazy("hospital:home_page")
-    success_message = "Hospital Updated Successfully"
+    success_message = "Beds Updated Successfully. Thank you for the contribution."
 
     def get_context_data(self, **kwargs):
         context = super(HospitalUpdateView, self).get_context_data(**kwargs)

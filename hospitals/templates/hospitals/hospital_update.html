@@ -1,11 +1,11 @@
 <form method="post" action="{% url 'hospital:h_edit' hospital_id %}">
   {% csrf_token %}
   <div style="margin: auto;">
-    <div style="float: left;">
+    <div style="float: left; margin-bottom: 2px;">
       {{ form }}
     </div>
     <div style="float: right;">
-      <button type="submit" value="Update" class="btn btn-light">
+      <button type="submit" value="Update" class="btn btn-primary">
         <i class="far fa-check-square"></i>
       </button>
     </div>

@@ -3,7 +3,7 @@
     <tr>
       <th scope="col">SN</th>
       <th scope="col">Name</th>
-      <th scope="col">Bed Available</th>
+      <th scope="col">Beds Available</th>
       <th scope="col">Updated On</th>
       <th scope="col">Address</th>
     </tr>
@@ -22,9 +22,9 @@
           <div class="beds-child1">
             <span>
               {% if hospital.availability.bed_availabe == 0 %}
-              <p>NA</p>
+              <p>unknown</p>
               {% elif hospital.availability.bed_availabe == "" %}
-              <p>NA</p>
+              <p>unknown</p>
               {% else %} {{hospital.availability.bed_availabe}} {% endif %}
             </span>
           </div>
@@ -32,7 +32,7 @@
             <button
               type="button"
               id="{{hospital.id}}"
-              class="btn btn-light editbtn"
+              class="btn btn-primary editbtn"
               edit-url="{% url 'hospital:h_edit' hospital.id%}"
             >
               <i class="far fa-edit editicon"></i>

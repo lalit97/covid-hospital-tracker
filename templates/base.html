@@ -1,13 +1,13 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
-      name="discription"
+      name="description"
       content="Covid Hospital Tracker is a crowdsourced initiative to track covid hospitals in India"
     />
     <meta name="keywords" content="covid, hospital, covid beds" />
@@ -16,6 +16,7 @@
       content="{% static 'img/brand.png' %}"
       width="30"
       height="30"
+      alt="hospital bed logo"
     />
     <meta property="og:title" content="Covid Hospital Tracker" />
     <meta
@@ -24,7 +25,11 @@
       content="Covid Hospital Tracker is a crowdsourced initiative to track covid hospitals in India"
     />
     <title>Covid Hospital Tracker</title>
-    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'img/favicon.png' %}"
+      alt="hospital bed logo"
+    />
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" />
     <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/brands.min.css' %}" />
@@ -70,6 +75,7 @@
             width="30"
             height="30"
             class="d-inline-block align-top"
+            alt="hospital bed logo"
           />
           Covid Hospital Tracker
         </a>
